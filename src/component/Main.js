@@ -64,12 +64,12 @@ function Main() {
                         Vestibulum ex purus, faucibus ut cursus vel, convallis mattis enim.<br></br>
                     </p>
                 </div>
-                <div style={{backgroundColor:'white', width:'max-content',height:'min-content',margin:'20px'}}>
+                <div style={{backgroundColor:'white', width:'max-content',height:'min-content',margin:'20px',justifySelf:'center'}}>
                     <img src={restaurant} style={{
-                        width: "30vw",
+                        width: "40vw",
                         marginTop: "30px",
                         justifySelf: "center",
-                        minWidth: "300px",position:'relative',bottom:'50px',left:"50px"
+                        minWidth: "300px",position:'relative',bottom:'40px',left:"40px"
                     }} alt="heroImg" />
                 </div>
             </div>
