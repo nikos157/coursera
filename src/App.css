@@ -78,6 +78,10 @@ button {
   height: auto;
   min-height: max-content;
 }
+#reserve {
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
 @media (max-width: 800px) {
   .hero {
     grid-template-columns: 1fr;
@@ -90,6 +94,11 @@ button {
   #testimonials {
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: 1fr 1fr;
+  }
+  #reserve {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,1fr);
+    margin-bottom: 50px;
   }
 
 }
