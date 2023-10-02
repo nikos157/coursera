@@ -10,7 +10,7 @@ function Main() {
     return(
         <main>
             <div className="hero">
-                <div style={{ marginBottom: "40px", width:"30vw", justifySelf:"center", alignSelf:"center", height:"fit-content"}}>
+                <div style={{ marginBottom: "40px", width:"40vw", justifySelf:"center", alignSelf:"center", height:"fit-content"}}>
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>

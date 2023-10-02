@@ -30,7 +30,9 @@ Footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
   background-color: black;
   color: bisque;
 }
