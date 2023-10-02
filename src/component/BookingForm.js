@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import AvailableTimes from "./vailableTimes"
+import AvailableTimes from "./AvailableTimes"
 const BookingForm=()=> {
     const [date,setDate]=useState(null)
     const [time,setTime]=useState(null)
@@ -16,7 +16,7 @@ const BookingForm=()=> {
     return (
         <form style={{display: "grid", maxWidth: "200px",minWidth:"200px", gap: "20px", margin:"auto auto auto auto"}}>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={(e)=>{setDate(e.target.value)}}/>
+            <input type="date" id="res-date" value={date} onChange={(e)=>{setDate(e.target.value)}} required/>
                 <label  htmlFor="res-time">Choose time</label>
                 <select id="res-time" value={time} onChange={(e)=>{setTime(e.target.value)}}>
                     <AvailableTimes/>
@@ -28,7 +28,7 @@ const BookingForm=()=> {
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>
-                <button type="submit" onClick={handleClick}>Make Your reservation</button>
+                <button type="submit" disabled={!date} onClick={handleClick}>Make Your reservation</button>
         </form>
     )
 }
