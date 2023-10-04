@@ -1,34 +1,35 @@
-import React, {useState} from "react"
 import AvailableTimes from "./AvailableTimes"
-const BookingForm=()=> {
-    const [date,setDate]=useState(null)
-    const [time,setTime]=useState(null)
-    const [guests,setGuests]=useState(1)
-    const [occasion,setOccasion]=useState(null)
-    function handleClick(e) {
-        e.preventDefault();
-        setDate("")
-        setTime("")
-        setGuests("")
-        setOccasion("")
-    }
+import React, { useReducer } from "react"
 
+const BookingForm=(props)=> {
+    const updateTimes= props.updateTimes
+    const initializeTimes=props.initializeTimes()
+    const [state,dispatch]=useReducer(updateTimes,initializeTimes)
+    console.log(state)
+    function handleClick(e) {
+        dispatch({type: "remove"})
+        e.preventDefault();
+        props.setDate("")
+        props.setTime(state[0])
+        props.setGuests(1)
+        props.setOccasion("Birthday")
+    }
     return (
         <form style={{display: "grid", maxWidth: "200px",minWidth:"200px", gap: "20px", margin:"auto auto auto auto"}}>
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={(e)=>{setDate(e.target.value)}} required/>
+            <input type="date" id="res-date" value={props.date} onChange={(e)=>{props.setDate(e.target.value); updateTimes(state,e.target.value);}}/>
                 <label  htmlFor="res-time">Choose time</label>
-                <select id="res-time" value={time} onChange={(e)=>{setTime(e.target.value)}}>
-                    <AvailableTimes/>
+                <select id="res-time" value={props.time} onChange={(e)=>{props.setTime(e.target.value)}}>
+                    <AvailableTimes times={state}/>
                 </select>
                 <label htmlFor="guests">Number of guests</label>
-                <input type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e)=>{setGuests(e.target.value)}} />
+                <input type="number" placeholder="1" min="1" max="10" id="guests" value={props.guests} onChange={(e)=>{props.setGuests(e.target.value)}} />
                     <label htmlFor="occasion">Occasion</label>
-                    <select id="occasion" value={occasion} onChange={(e)=>{setOccasion(e.target.value)}}>
+                    <select id="occasion" value={props.occasion} onChange={(e)=>{props.setOccasion(e.target.value)}}>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                     </select>
-                <button type="submit" disabled={!date} onClick={handleClick}>Make Your reservation</button>
+                <button type="submit" disabled={!props.date} onClick={handleClick} >{!props.date?"Choose a date":"Make Your reservation"}</button>
         </form>
     )
 }

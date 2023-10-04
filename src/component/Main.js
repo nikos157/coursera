@@ -6,6 +6,7 @@ import photo1 from "./icons_assets/Mario and Adrian A.jpg"
 import photo2 from "./icons_assets/Mario and Adrian b.jpg"
 import photo3 from "./icons_assets/restaurant chef B.jpg"
 import Rate from "./Rate"
+import { Link } from "react-router-dom";
 function Main() {
     return(
         <main>
@@ -19,7 +20,7 @@ function Main() {
                         Vestibulum ex purus, faucibus ut cursus vel, convallis mattis enim.<br></br>
                     </p>
                     <button >
-                    Reserve
+                        <Link style={{color:"black"}}to="/BookingPage">Reserve A Table</Link>
                     </button>
                 </div>
                 <img src={heroImg} style={{
@@ -30,9 +31,9 @@ function Main() {
                     minWidth: "300px"
                     }} alt="heroImg"/>
             </div>
-            <div>
+            <div style={{minHeight:"100vh", justifyContent:"center"}}>
                 <div id="special1">
-                    <h1>Specials</h1>
+                    <h1 style={{alignSelf:"center"}}>Specials</h1>
                     <button style={{justifySelf:"center"}}>Online Menu</button>
                 </div>
                 <div id="special2">
@@ -45,7 +46,7 @@ function Main() {
                 </div>
 
             </div>
-            <div style={{ textAlign: "center", backgroundColor:"#F4CE14"}}>
+            <div style={{ textAlign: "center", backgroundColor:"#F4CE14", minHeight:"100vh"}}>
                 <h1>Testimonials</h1>
                 <div id="testimonials">
                     <Rate />
@@ -64,7 +65,7 @@ function Main() {
                         Vestibulum ex purus, faucibus ut cursus vel, convallis mattis enim.<br></br>
                     </p>
                 </div>
-                <div style={{backgroundColor:'white', width:'max-content',height:'min-content',margin:'20px',justifySelf:'center'}}>
+                <div style={{backgroundColor:'white', width:'max-content',height:'min-content',margin:'20px',justifySelf:'center', alignSelf:"center"}}>
                     <img src={restaurant} style={{
                         width: "40vw",
                         marginTop: "30px",

@@ -55,6 +55,7 @@ nav ul li:hover {
   justify-content: space-around;
   background-color: #495E57;
   height:fit-content;
+  min-height: 100vh;
 }
 button {
   width: max-content;
@@ -81,6 +82,11 @@ button {
 #reserve {
   grid-template-columns: 1fr 1fr;
   height: 100vh;
+}
+input, select, option {
+  height: 40px;
+  border-radius: 16px;
+  text-align: center;
 }
 @media (max-width: 800px) {
   .hero {
